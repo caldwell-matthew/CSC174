@@ -29,7 +29,6 @@ CREATE TABLE IF NOT EXISTS shop(
     shop_id INT,
     name VARCHAR(30),
     address VARCHAR(60),
-    avg_rating NUMERIC,
     CONSTRAINT shop_pk PRIMARY KEY (shop_id)
     );
 
