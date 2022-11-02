@@ -15,14 +15,32 @@ CREATE TABLE IF NOT EXISTS drink(
     size NUMERIC,
     calories INT,
     caffeine NUMERIC,
-    drink_type ENUM('coffee', 'tea', 'soft drink'),
+    sugar_qty INT,
+    CONSTRAINT drink_pk PRIMARY KEY (drink_id)
+    );
+
+CREATE TABLE IF NOT EXISTS coffee(
+    drink_id INT,
     coffee_type VARCHAR(30),
     roast VARCHAR(20),
+    milk_type VARCHAR(20),
+    CONSTRAINT coffee_pk PRIMARY KEY (drink_id),
+    CONSTRAINT coffee_drink_fk FOREIGN KEY (drink_id) REFERENCES drink(drink_id)
+    );
+
+CREATE TABLE IF NOT EXISTS tea(
+    drink_id INT,
     tea_type VARCHAR(20),
     milk_type VARCHAR(20),
-    sugar_qty INT,
+    CONSTRAINT tea_pk PRIMARY KEY (drink_id),
+    CONSTRAINT tea_drink_fk FOREIGN KEY (drink_id) REFERENCES drink(drink_id)
+    );
+
+CREATE TABLE IF NOT EXISTS soda(
+    drink_id INT,
     flavor VARCHAR(20),
-    CONSTRAINT drink_pk PRIMARY KEY (drink_id)
+    CONSTRAINT soda_pk PRIMARY KEY (drink_id),
+    CONSTRAINT soda_drink_fk FOREIGN KEY (drink_id) REFERENCES drink(drink_id)
     );
 
 CREATE TABLE IF NOT EXISTS shop(
@@ -46,7 +64,7 @@ CREATE TABLE IF NOT EXISTS review(
     CONSTRAINT review_drink_fk FOREIGN KEY (drink_id) REFERENCES drink (drink_id)
     );
 
-CREATE TABLE IF NOT EXISTS sale(
+CREATE TABLE IF NOT EXISTS sell(
     shop_id INT,
     drink_id INT,
     price NUMERIC,
