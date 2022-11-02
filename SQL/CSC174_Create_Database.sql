@@ -69,7 +69,7 @@ CREATE TABLE IF NOT EXISTS sells(
     drink_id INT,
     price NUMERIC,
     purchase_qty INT,
-    CONSTRAINT sale_pk PRIMARY KEY (shop_id,drink_id),
-    CONSTRAINT sale_shop_fk FOREIGN KEY (shop_id) REFERENCES shop (shop_id),
-    CONSTRAINT sale_drink_fk FOREIGN KEY (drink_id) REFERENCES drink (drink_id)
+    CONSTRAINT sells_pk PRIMARY KEY (shop_id,drink_id),
+    CONSTRAINT sells_shop_fk FOREIGN KEY (shop_id) REFERENCES shop (shop_id),
+    CONSTRAINT sells_drink_fk FOREIGN KEY (drink_id) REFERENCES drink (drink_id)
     );
