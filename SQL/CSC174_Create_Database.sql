@@ -59,6 +59,7 @@ CREATE TABLE IF NOT EXISTS review(
     description VARCHAR(50),
     num_visits INT,
     CONSTRAINT review_pk PRIMARY KEY (review_id),
+    CONSTRAINT review_uq UNIQUE (user_id, shop_id, drink_id),
     CONSTRAINT review_user_fk FOREIGN KEY (user_id) REFERENCES user (user_id),
     CONSTRAINT review_shop_fk FOREIGN KEY (shop_id) REFERENCES shop (shop_id),
     CONSTRAINT review_drink_fk FOREIGN KEY (drink_id) REFERENCES drink (drink_id)
