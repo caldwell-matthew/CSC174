@@ -64,7 +64,7 @@ CREATE TABLE IF NOT EXISTS review(
     CONSTRAINT review_drink_fk FOREIGN KEY (drink_id) REFERENCES drink (drink_id)
     );
 
-CREATE TABLE IF NOT EXISTS sell(
+CREATE TABLE IF NOT EXISTS sells(
     shop_id INT,
     drink_id INT,
     price NUMERIC,

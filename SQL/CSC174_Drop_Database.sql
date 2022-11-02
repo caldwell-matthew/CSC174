@@ -1,6 +1,6 @@
 drop table review;
 
-drop table sell;
+drop table sells;
 
 drop table shop;
 
