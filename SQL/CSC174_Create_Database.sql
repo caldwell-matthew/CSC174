@@ -1,17 +1,17 @@
 CREATE TABLE IF NOT EXISTS user(
     user_id INT,
-    username VARCHAR(25),
-    email VARCHAR(45),
-    password VARCHAR(25),
-    fname VARCHAR(15),
-    lname VARCHAR(20),
-    dob DATE,
+    username VARCHAR(25) NOT NULL,
+    email VARCHAR(45) NOT NULL,
+    password VARCHAR(25) NOT NULL,
+    fname VARCHAR(15) NOT NULL,
+    lname VARCHAR(20) NOT NULL,
+    dob DATE NOT NULL,
     CONSTRAINT user_pk PRIMARY KEY (user_ID)
     );
 
 CREATE TABLE IF NOT EXISTS drink(
     drink_id INT,
-    name VARCHAR(25),
+    name VARCHAR(25) NOT NULL,
     size NUMERIC,
     calories INT,
     caffeine NUMERIC,
@@ -45,17 +45,17 @@ CREATE TABLE IF NOT EXISTS soda(
 
 CREATE TABLE IF NOT EXISTS shop(
     shop_id INT,
-    name VARCHAR(30),
+    name VARCHAR(30) NOT NULL,
     address VARCHAR(60),
     CONSTRAINT shop_pk PRIMARY KEY (shop_id)
     );
 
 CREATE TABLE IF NOT EXISTS review(
     review_id INT,
-    user_id INT,
-    shop_id INT,
-    drink_id INT,
-    rating NUMERIC,
+    user_id INT NOT NULL,
+    shop_id INT NOT NULL,
+    drink_id INT NOT NULL,
+    rating NUMERIC NOT NULL,
     description VARCHAR(50),
     num_visits INT,
     CONSTRAINT review_pk PRIMARY KEY (review_id),
