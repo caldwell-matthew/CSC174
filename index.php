@@ -16,12 +16,10 @@
 
   $statement = $SQLcon -> prepare("SELECT * FROM user");
   $result = $statement -> execute();
-  
-  if ($result -> num_rows > 0) {
-    while($row = $result->mysqli_fetch_assoc()) {
-      echo "id: ".$row["user_id"]."-Username: ".$row["username"]."<br>";
-    }
-  } else echo "No results";
+  $result = $stmt->get_result();
+  foreach ($result as $row) {
+    print_r($row);
+  }
 
   $statement -> close();
   $SQLcon -> close();
