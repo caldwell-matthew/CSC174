@@ -16,7 +16,13 @@
 
   $statement = $SQLcon -> prepare("SELECT * FROM user");
   $result = $statement -> execute();
-  echo $result;
+  if ($result->num_rows > 0) {
+    while($row = $result->fetch_assoc()) {
+      echo "id: ".$row["user_id"].
+      "-Username: ".$row["username"].
+      " ".$row["fname"]." ".$row["lname"]."<br>";
+    }
+  } else echo "No results";
 
   $statement -> close();
   $SQLcon -> close();
