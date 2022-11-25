@@ -16,8 +16,10 @@
 
   $statement = $SQLcon -> prepare("SELECT * FROM user");
   $result = $statement -> execute();
-  while($row = $result->fetch_assoc()) {
-    echo "id: ".$row["user_id"]."-Username: ".$row["username"]."<br>";
+  
+  $rows = $result -> fetch_all(MYSQLI_ASSOC);
+  foreach($rows as $row) {
+    printf("%s (%s)\n", $row["user_id"], $row["username"]);
   }
 
   $statement -> close();
