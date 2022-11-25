@@ -18,7 +18,8 @@
   $result = $statement -> execute();
   $result = $statement -> get_result();
   foreach ($result as $row) {
-    print_r($row);
+    print_r($row['username'].':'.$row['email']);
+    print_r("\n");
   }
 
   $statement -> close();
