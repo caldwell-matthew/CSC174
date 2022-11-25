@@ -12,15 +12,13 @@
   if($SQLcon -> connect_errno) {
     die("mySQL CONNECTION FAILURE: ".$SQLcon -> connect_errno);
   }
-  else echo "mySQL CONNECTION ACTIVE!\n";
+  else echo "mySQL CONNECTION ACTIVE!\n\n";
 
   $statement = $SQLcon -> prepare("SELECT * FROM user");
   $result = $statement -> execute();
   if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
-      echo "id: ".$row["user_id"].
-      "-Username: ".$row["username"].
-      " ".$row["fname"]." ".$row["lname"]."<br>";
+      echo "id: ".$row["user_id"]."-Username: ".$row["username"]."<br>";
     }
   } else echo "No results";
 
