@@ -14,6 +14,13 @@
   }
   else echo "mySQL CONNECTION ACTIVE!\n";
 
-  $msg = $_POST['message'];
-  echo $msg;
+  $statement = $SQLcon -> prepare("SELECT * FROM user");
+  $statement -> execute();
+  echo $statement;
+  $statement -> close();
+
+  $SQLcon -> close();
+
+  // $msg = $_POST['message'];
+  // echo $msg;
 ?>
