@@ -15,10 +15,10 @@
   else echo "mySQL CONNECTION ACTIVE!\n";
 
   $statement = $SQLcon -> prepare("SELECT * FROM user");
-  $statement -> execute();
-  echo $statement;
-  $statement -> close();
+  $result = $statement -> execute();
+  echo $result;
 
+  $statement -> close();
   $SQLcon -> close();
 
   // $msg = $_POST['message'];
