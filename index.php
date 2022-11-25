@@ -16,7 +16,7 @@
 
   $statement = $SQLcon -> prepare("SELECT * FROM user");
   $result = $statement -> execute();
-  $result = $stmt->get_result();
+  $result = $statement -> get_result();
   foreach ($result as $row) {
     print_r($row);
   }
