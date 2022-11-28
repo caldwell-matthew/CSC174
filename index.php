@@ -46,3 +46,10 @@
   $select -> close();
   $SQLcon -> close();
 ?>
+<div>
+  <?php
+  echo 'name is ' . $dname . '</b>!';
+  ?>
+  </div>
+  </body>
+</html>
