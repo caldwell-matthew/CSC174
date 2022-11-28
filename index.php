@@ -9,27 +9,33 @@
   // PHP mySQL Connector
   $SQLcon = new mysqli($servername, $username, $password, $dbname);
 
-  if($SQLcon -> connect_errno) {
+  if($SQLcon -> connect_errno) 
     die("mySQL CONNECTION FAILURE: ".$SQLcon -> connect_errno);
-  }
-  else echo "mySQL CONNECTION ACTIVE!\n\n";
+  else 
+    echo "mySQL CONNECTION ACTIVE!\n\n";
 
+  // Prepared statement for inserting data into drink table.
   $insert = $SQLcon -> prepare(
-    "INSERT INTO drink (drink_id, name, size, calories, caffeine, sugar_qty) VALUES (?, ?, ?, ?, ?, ?)");
+    "INSERT INTO drink 
+    (drink_id, name, size, calories, caffeine, sugar_qty) 
+    VALUES (?, ?, ?, ?, ?, ?)");
   $insert -> bind_param("isiiii", $drink_id, $name, $size, $calories, $caffeine, $sugar_qty);
 
-  // $drink_id = 0;
-  // $name = "Latte";
-  // $size = 1;
-  // $calories = 2;
-  // $caffeine = 3;
-  // $sugar_qty = 4;
+  // Values from index.html form to be inserted.
+  $drink_id = 0;
+  $name = $_GET["dname"];
+  $size = $_GET["size"];
+  $calories = $_GET["calories"];
+  $caffeine = $_GET["email"];
+  $sugar_qty = $_GET["email"];
   // $insert -> execute();
   // $insert -> close();
 
+  // Prepared statement for selecting all data from drink table.
   $select = $SQLcon -> prepare("SELECT * FROM drink");
   $result = $select -> execute();
   $result = $select -> get_result(); 
+  
   foreach ($result as $row) {
     print_r($row);
     print_r("\n");
