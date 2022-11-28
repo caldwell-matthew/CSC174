@@ -14,17 +14,27 @@
   }
   else echo "mySQL CONNECTION ACTIVE!\n\n";
 
-  $statement = $SQLcon -> prepare("SELECT * FROM user");
-  $result = $statement -> execute();
-  $result = $statement -> get_result();
+  $insert = $SQLcon -> prepare(
+    "INSERT INTO drink (drink_id, name, size, calories, caffeine, sugar_qty) VALUES (?, ?, ?, ?, ?, ?)");
+  $insert -> bind_param("isiiii", $drink_id, $name, $size, $calories, $caffeine, $sugar_qty);
+
+  // $drink_id = 0;
+  // $name = "Latte";
+  // $size = 1;
+  // $calories = 2;
+  // $caffeine = 3;
+  // $sugar_qty = 4;
+  // $insert -> execute();
+  // $insert -> close();
+
+  $select = $SQLcon -> prepare("SELECT * FROM drink");
+  $result = $select -> execute();
+  $result = $select -> get_result(); 
   foreach ($result as $row) {
-    print_r($row['username'].':'.$row['email']);
+    print_r($row);
     print_r("\n");
   }
 
-  $statement -> close();
+  $select -> close();
   $SQLcon -> close();
-
-  // $msg = $_POST['message'];
-  // echo $msg;
 ?>
