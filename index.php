@@ -26,10 +26,12 @@
   $name = $_GET["dname"];
   $size = $_GET["size"];
   $calories = $_GET["calories"];
-  $caffeine = $_GET["email"];
-  $sugar_qty = $_GET["email"];
+  $caffeine = $_GET["caffeine"];
+  $sugar_qty = $_GET["sugar"];
   // $insert -> execute();
   // $insert -> close();
+
+  echo $_GET["dname"];
 
   // Prepared statement for selecting all data from drink table.
   $select = $SQLcon -> prepare("SELECT * FROM drink");
