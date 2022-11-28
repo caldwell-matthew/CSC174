@@ -1,4 +1,5 @@
-<?php
+<?php header('Location: /index.html');
+
   // Database Info
   // mysql://b39bd7484b29d1:e63a8cc1@us-cdbr-east-06.cleardb.net/heroku_9a0b3385c551174?reconnect=true
   $servername = 'us-cdbr-east-06.cleardb.net';
