@@ -24,15 +24,26 @@
 
   // Values from index.html form to be inserted.
   $drink_id = 0;
-  $name = $_GET["dname"];
-  $size = $_GET["size"];
-  $calories = $_GET["calories"];
-  $caffeine = $_GET["caffeine"];
-  $sugar_qty = $_GET["sugar"];
+  // $name = $_GET["dname"];
+  // $size = $_GET["size"];
+  // $calories = $_GET["calories"];
+  // $caffeine = $_GET["caffeine"];
+  // $sugar_qty = $_GET["sugar"];
   // $insert -> execute();
   // $insert -> close();
 
-  echo $_GET["dname"];
+  if (empty($_GET["dname"])) echo 'Nothing written get';
+  else {
+    $name = $_GET["dname"];
+    echo $name;
+  }
+
+  if (empty($_POST["dname"])) echo 'Nothing written post';
+  else {
+    $name = $_POST["dname"];
+    echo $name;
+  }
+
 
   // Prepared statement for selecting all data from drink table.
   $select = $SQLcon -> prepare("SELECT * FROM drink");
