@@ -1,4 +1,4 @@
-<?php header('Location: /index.html');
+<?php //header('Location: /index.html');
 
   // Database Info
   // mysql://b39bd7484b29d1:e63a8cc1@us-cdbr-east-06.cleardb.net/heroku_9a0b3385c551174?reconnect=true
@@ -46,10 +46,72 @@
   $select -> close();
   $SQLcon -> close();
 ?>
-<div>
-  <?php
-  echo 'name is ' . $dname . '</b>!';
-  ?>
-  </div>
+
+<!DOCTYPE html>
+  <head>CSC174 FINAL PROJECT</head><br><br> 
+  <body>
+    <form method = "post" action = "index.php">
+      <label for="dname"> *Enter a Drink Name: (25 characters max.) </label><br>
+      <textarea id = "dname" name = "dname" maxlength = "500" style = "width:300px"> </textarea>
+      <br><br>
+      <label for="size">Select a Size(oz):</label>
+      <select name="size">
+        <option value=6>6 oz</option>
+        <option value=8>8 oz</option>
+        <option value=10>10 oz</option>
+        <option value=12>12 oz</option>
+        <option value=14>14 oz</option>
+        <option value=16>16 oz</option>
+        <option value=20>20 oz</option>
+        <option value=24>24 oz</option>
+        <option value=30>30 oz</option>
+      </select>
+      <br>
+      <label for="calories">Select how many Calories:</label>
+      <select name="calories">
+        <option value=0>0 Cal</option>
+        <option value=100>100 Cal</option>
+        <option value=200>200 Cal</option>
+        <option value=300>300 Cal</option>
+        <option value=400>400 Cal</option>
+        <option value=500>500 Cal</option>
+        <option value=600>600 Cal</option>
+        <option value=700>700 Cal</option>
+        <option value=800>800 Cal</option>
+      </select>
+      <br>
+      <label for="caffeine">Select how much Caffeine(mg):</label>
+      <select name="caffeine">
+        <option value=0>Caffeine Free</option>
+        <option value=10>10 mg</option>
+        <option value=20>20 mg</option>
+        <option value=30>30 mg</option>
+        <option value=40>40 mg</option>
+        <option value=50>50 mg</option>
+        <option value=60>60 mg</option>
+        <option value=70>70 mg</option>
+        <option value=80>80 mg</option>
+        <option value=90>90 mg</option>
+        <option value=100>100 mg</option>
+      </select>
+      <br>
+      <label for="sugar">Select how much Sugar(g):</label>
+      <select name="sugar">
+        <option value=0>Sugar Free</option>
+        <option value=5>5 g</option>
+        <option value=10>10 g</option>
+        <option value=15>15 g</option>
+        <option value=20>20 g</option>
+        <option value=25>25 g</option>
+        <option value=30>30 g</option>
+        <option value=35>35 g</option>
+        <option value=40>40 g</option>
+        <option value=45>45 g</option>
+        <option value=50>50 g</option>
+      </select>
+      <br>
+      <br>
+      <input type = "submit" value = "ENTER">
+    </form>
   </body>
 </html>
