@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
   // Database Info
   // mysql://b39bd7484b29d1:e63a8cc1@us-cdbr-east-06.cleardb.net/heroku_9a0b3385c551174?reconnect=true
   $servername = 'us-cdbr-east-06.cleardb.net';
@@ -36,8 +36,8 @@
 
   $select -> close();
   $SQLcon -> close();
+?> -->
 
-?>
 <!DOCTYPE html>
   <head>CSC174 FINAL PROJECT</head><br><br> 
   <body>
@@ -104,23 +104,25 @@
       <br>
       <input type = "submit" value = "submit">
     </form>
-    <?php
-      // Values from index.html form to be inserted.
-      if(empty($_POST['dname'])) 
-        echo " <br/> Please enter a name!";
-      else {
-        $drink_id = 0;
-        $name= $_POST['dname'];
-        $size = $_POST["size"];
-        $calories = $_POST["calories"];
-        $caffeine = $_POST["caffeine"];
-        $sugar_qty = $_POST["sugar"];
-        echo ('Name: '.$name.'<br/>'.
-              'Size: '.$size.'<br/>'.
-              'Calories: '.$calories.'<br/>'.
-              'Caffeine: '.$caffeine.'<br/>'.
-              'Sugar: '.$sugar_qty.'<br/>');
-      }
-    ?>
   </body>
+  <?php
+    // Values from index.html form to be inserted.
+    if(empty($_POST['dname'])) 
+      echo " <br/> Please enter a name!";
+    else {
+      $drink_id = 0;
+      $name= $_POST['dname'];
+      $size = $_POST["size"];
+      $calories = $_POST["calories"];
+      $caffeine = $_POST["caffeine"];
+      $sugar_qty = $_POST["sugar"];
+      echo (
+        'Name: '.$name.'<br/>'.
+        'Size: '.$size.'oz'.'<br/>'.
+        'Calories: '.$calories.'<br/>'.
+        'Caffeine: '.$caffeine.'mg'.'<br/>'.
+        'Sugar: '.$sugar_qty.'g'.'<br/>'
+      );
+    }
+  ?>
 </html>
