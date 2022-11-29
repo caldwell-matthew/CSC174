@@ -97,15 +97,14 @@
     $result = $select -> get_result(); 
     
     foreach ($result as $row) {
-      print_r($row);
-      // echo (
-      //   'Drink ID: '.$row['drink_id'].'<br/>'.
-      //   'Name: '.$name.'<br/>'.
-      //   'Size: '.$size.'oz'.'<br/>'.
-      //   'Calories: '.$calories.'<br/>'.
-      //   'Caffeine: '.$caffeine.'mg'.'<br/>'.
-      //   'Sugar: '.$sugar_qty.'g'.'<br/>'
-      // );
+      echo (
+        'Drink ID: '.$row['drink_id'].'<br/>'.
+        'Name: '.$row['name'].'<br/>'.
+        'Size: '.$row['size'].'<br/>'.
+        'Calories: '.$row['calories'].'<br/>'.
+        'Caffeine: '.$row['caffeine'].'<br/>'.
+        'Sugar: '.$row['sugar_qty'].'<br/>'
+      );
     }
 
     $select -> close();
