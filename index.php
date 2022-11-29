@@ -114,15 +114,8 @@
     $calories = $_POST["calories"];
     $caffeine = $_POST["caffeine"];
     $sugar_qty = $_POST["sugar"];
-    // echo (
-    //   'Name: '.$name.'<br/>'.
-    //   'Size: '.$size.'oz'.'<br/>'.
-    //   'Calories: '.$calories.'<br/>'.
-    //   'Caffeine: '.$caffeine.'mg'.'<br/>'.
-    //   'Sugar: '.$sugar_qty.'g'.'<br/>'
-    // );
 
-    // $insert -> execute();
-    // $insert -> close();
+    $insert -> execute();
+    $insert -> close();
   ?>
 </html>
