@@ -96,7 +96,7 @@
         'Sugar: '.$row['sugar_qty'].'<br/><br/>'
       );
     }
-    // $select -> close();
+    $select -> close();
   
 
     // Prepared statement for inserting data into drink table.
