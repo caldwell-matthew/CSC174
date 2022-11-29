@@ -86,6 +86,7 @@
     $result = $select -> get_result(); 
 
     // Display all rows in drink table.
+    $drink_id = 0;
     foreach ($result as $row) {
       echo (
         'Drink ID: '.$row['drink_id'].'<br/>'.
@@ -95,10 +96,10 @@
         'Caffeine: '.$row['caffeine'].'<br/>'.
         'Sugar: '.$row['sugar_qty'].'<br/><br/>'
       );
+      $drink_id++;
     }
     $select -> close();
   
-
     // Prepared statement for inserting data into drink table.
     $insert = $SQLcon -> prepare(
       "INSERT INTO drink 
@@ -107,8 +108,7 @@
     $insert -> bind_param("isiiii", $drink_id, $name, $size, $calories, $caffeine, $sugar_qty);
 
     // Values from form to be inserted.
-    $drink_id = 100;
-    $drink_id = $drink_id + 1;
+    //$drink_id = 0;
     $name= $_POST['dname'];
     $size = $_POST["size"];
     $calories = $_POST["calories"];
