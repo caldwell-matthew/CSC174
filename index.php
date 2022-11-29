@@ -100,29 +100,25 @@
         <option value=45>45 g</option>
         <option value=50>50 g</option>
       </select>
-      <br>
-      <br>
+      <br><br>
       <input type = "submit" value = "submit">
     </form>
   </body>
+  <br><br>
   <?php
     // Values from index.html form to be inserted.
-    if(empty($_POST['dname'])) 
-      echo " <br/> Please enter a name!";
-    else {
-      $drink_id = 0;
-      $name= $_POST['dname'];
-      $size = $_POST["size"];
-      $calories = $_POST["calories"];
-      $caffeine = $_POST["caffeine"];
-      $sugar_qty = $_POST["sugar"];
-      echo (
-        'Name: '.$name.'<br/>'.
-        'Size: '.$size.'oz'.'<br/>'.
-        'Calories: '.$calories.'<br/>'.
-        'Caffeine: '.$caffeine.'mg'.'<br/>'.
-        'Sugar: '.$sugar_qty.'g'.'<br/>'
-      );
-    }
+    $drink_id = 0;
+    $name= $_POST['dname'];
+    $size = $_POST["size"];
+    $calories = $_POST["calories"];
+    $caffeine = $_POST["caffeine"];
+    $sugar_qty = $_POST["sugar"];
+    echo (
+      'Name: '.$name.'<br/>'.
+      'Size: '.$size.'oz'.'<br/>'.
+      'Calories: '.$calories.'<br/>'.
+      'Caffeine: '.$caffeine.'mg'.'<br/>'.
+      'Sugar: '.$sugar_qty.'g'.'<br/>'
+    );
   ?>
 </html>
