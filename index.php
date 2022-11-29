@@ -75,7 +75,6 @@
 
     // PHP mySQL Connector
     $SQLcon = new mysqli($servername, $username, $password, $dbname);
-
     if($SQLcon -> connect_errno) 
       die("<br/>mySQL CONNECTION FAILURE: ".$SQLcon -> connect_errno);
     else 
@@ -116,6 +115,6 @@
     $sugar_qty = $_POST["sugar"];
 
     $insert -> execute();
-    $insert -> close();
+    //$insert -> close();
   ?>
 </html>
