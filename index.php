@@ -107,7 +107,7 @@
     $insert -> bind_param("isiiii", $drink_id, $name, $size, $calories, $caffeine, $sugar_qty);
 
     // Values from form to be inserted.
-    $drink_id = 0;
+    $drink_id = 100;
     $name= $_POST['dname'];
     $size = $_POST["size"];
     $calories = $_POST["calories"];
@@ -115,9 +115,9 @@
     $sugar_qty = $_POST["sugar"];
 
     $insert -> execute();
-    // $insert -> close();
+    $insert -> close();
 
     // Close SQL
-    // $SQLcon -> close();
+    $SQLcon -> close();
   ?>
 </html>
