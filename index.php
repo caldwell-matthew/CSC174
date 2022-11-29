@@ -108,6 +108,7 @@
 
     // Values from form to be inserted.
     $drink_id = 100;
+    $drink_id = $drink_id++;
     $name= $_POST['dname'];
     $size = $_POST["size"];
     $calories = $_POST["calories"];
