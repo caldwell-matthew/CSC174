@@ -97,7 +97,7 @@
       );
     }
     $select -> close();
-    $SQLcon -> close();
+  
 
     // Prepared statement for inserting data into drink table.
     $insert = $SQLcon -> prepare(
@@ -115,6 +115,9 @@
     $sugar_qty = $_POST["sugar"];
 
     $insert -> execute();
-    //$insert -> close();
+    $insert -> close();
+
+    // Close SQL
+    // $SQLcon -> close();
   ?>
 </html>
