@@ -96,7 +96,7 @@
         'Sugar: '.$row['sugar_qty'].'<br/><br/>'
       );
     }
-    $select -> close();
+    // $select -> close();
   
 
     // Prepared statement for inserting data into drink table.
@@ -115,7 +115,7 @@
     $sugar_qty = $_POST["sugar"];
 
     $insert -> execute();
-    $insert -> close();
+    // $insert -> close();
 
     // Close SQL
     // $SQLcon -> close();
