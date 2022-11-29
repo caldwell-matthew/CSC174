@@ -81,21 +81,12 @@
     else 
       echo "<br/>mySQL CONNECTION ACTIVE!<br/><br/>";
 
-    // Prepared statement for inserting data into drink table.
-    $insert = $SQLcon -> prepare(
-      "INSERT INTO drink 
-      (drink_id, name, size, calories, caffeine, sugar_qty) 
-      VALUES (?, ?, ?, ?, ?, ?)");
-    $insert -> bind_param("isiiii", $drink_id, $name, $size, $calories, $caffeine, $sugar_qty);
-
-    // $insert -> execute();
-    // $insert -> close();
-
     // Prepared statement for selecting all data from drink table.
     $select = $SQLcon -> prepare("SELECT * FROM drink");
     $result = $select -> execute();
     $result = $select -> get_result(); 
-    
+
+    // Display all rows in drink table.
     foreach ($result as $row) {
       echo (
         'Drink ID: '.$row['drink_id'].'<br/>'.
@@ -103,12 +94,18 @@
         'Size: '.$row['size'].'<br/>'.
         'Calories: '.$row['calories'].'<br/>'.
         'Caffeine: '.$row['caffeine'].'<br/>'.
-        'Sugar: '.$row['sugar_qty'].'<br/>'
+        'Sugar: '.$row['sugar_qty'].'<br/><br/>'
       );
     }
-
     $select -> close();
     $SQLcon -> close();
+
+    // Prepared statement for inserting data into drink table.
+    $insert = $SQLcon -> prepare(
+      "INSERT INTO drink 
+      (drink_id, name, size, calories, caffeine, sugar_qty) 
+      VALUES (?, ?, ?, ?, ?, ?)");
+    $insert -> bind_param("isiiii", $drink_id, $name, $size, $calories, $caffeine, $sugar_qty);
 
     // Values from form to be inserted.
     $drink_id = 0;
@@ -117,12 +114,15 @@
     $calories = $_POST["calories"];
     $caffeine = $_POST["caffeine"];
     $sugar_qty = $_POST["sugar"];
-    echo (
-      'Name: '.$name.'<br/>'.
-      'Size: '.$size.'oz'.'<br/>'.
-      'Calories: '.$calories.'<br/>'.
-      'Caffeine: '.$caffeine.'mg'.'<br/>'.
-      'Sugar: '.$sugar_qty.'g'.'<br/>'
-    );
+    // echo (
+    //   'Name: '.$name.'<br/>'.
+    //   'Size: '.$size.'oz'.'<br/>'.
+    //   'Calories: '.$calories.'<br/>'.
+    //   'Caffeine: '.$caffeine.'mg'.'<br/>'.
+    //   'Sugar: '.$sugar_qty.'g'.'<br/>'
+    // );
+
+    // $insert -> execute();
+    // $insert -> close();
   ?>
 </html>
