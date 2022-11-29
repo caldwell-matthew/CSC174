@@ -115,7 +115,11 @@
         $calories = $_POST["calories"];
         $caffeine = $_POST["caffeine"];
         $sugar_qty = $_POST["sugar"];
-        echo ('You entered: '.$name.$size.$calories.$caffeine.$sugar_qty.'<br/>');
+        echo ('Name: '.$name.'<br/>'.
+              'Size: '.$size.'<br/>'.
+              'Calories: '.$calories.'<br/>'.
+              'Caffeine: '.$caffeine.'<br/>'.
+              'Sugar: '.$sugar_qty.'<br/>');
       }
     ?>
   </body>
