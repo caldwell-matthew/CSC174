@@ -62,7 +62,7 @@
       </select>
       <br>
       <br>
-      <input type = "submit" value = "submit">
+      <input type = "submit" value = "submit" onSubmit="window.location.reload();">
     </form>
   </body>
   <?php
@@ -108,7 +108,6 @@
     $insert -> bind_param("isiiii", $drink_id, $name, $size, $calories, $caffeine, $sugar_qty);
 
     // Values from form to be inserted.
-    //$drink_id = 0;
     $name= $_POST['dname'];
     $size = $_POST["size"];
     $calories = $_POST["calories"];
