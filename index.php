@@ -1,7 +1,7 @@
 <!DOCTYPE html>
   <head>CSC174 FINAL PROJECT</head><br><br> 
   <body>
-    <form method = "post" action = "index.php">
+    <form method = "post" action = "index.php" onSubmit="window.location.reload();">
       <label for="dname"> *Enter a Drink Name: (25 characters max.) </label><br>
       <textarea id = "dname" name = "dname" maxlength = "500" style = "width:300px"> </textarea>
       <br><br>
@@ -62,7 +62,7 @@
       </select>
       <br>
       <br>
-      <input type = "submit" value = "submit" onSubmit="window.location.reload();">
+      <input type = "submit" value = "submit">
     </form>
   </body>
   <?php
