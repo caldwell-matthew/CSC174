@@ -2,9 +2,11 @@
 Our website allows a user to submit a drink into our mySQL database and see the returned results both utilizing prepared statements.
 
 Our HTML and php code is located within the "index.php" file:
+
 [index.php](https://github.com/caldwell-matthew/CSC174/blob/master/index.php)
 
 The deployment for our website is located here:
+
 [Deployment](https://csc174-final.herokuapp.com/)
 
 # SQL CODE
