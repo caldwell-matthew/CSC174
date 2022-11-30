@@ -1,7 +1,7 @@
 <!DOCTYPE html>
   <head>CSC174 FINAL PROJECT</head><br><br> 
   <body>
-    <form method = "post">
+    <form method = "post" onsubmit="setTimeout(function(){window.location.reload();},10);">
       <label for="dname"> *Enter a Drink Name: (25 characters max.) </label><br>
       <textarea id = "dname" name = "dname" maxlength = "500" style = "width:300px"> </textarea>
       <br><br>
